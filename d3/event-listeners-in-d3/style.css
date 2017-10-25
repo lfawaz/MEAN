@@ -1,0 +1,64 @@
+body {
+  background-color: #e4e4e4;
+}
+
+h1 {
+  text-align: center;
+}
+
+#notes, #previews {
+  margin: 0 auto;
+  width: 75%;
+}
+
+.hide{
+  display: none;
+}
+
+.note {
+  background-color: #fdffb7;
+  border: 8px solid #d4daa7;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+
+.preview {
+  background-color: rgb(0,150,0);
+  border: 8px solid rgb(0,200,0);
+  border-radius: 8px;
+  padding: 10px;
+}
+form {
+  text-align: center;
+}
+
+input {
+  width: 50%;
+}
+
+input,
+button {
+  padding: 10px;
+}
+
+button {
+  background-color: #ff9494;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #fe2222;
+}
+
+button:focus {
+  outline: none;
+}
+
+#iamFeelingLucky {
+  background-color: green;
+  border: none;
+  border-radius: 5px;
+}
