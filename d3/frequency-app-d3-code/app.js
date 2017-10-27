@@ -1,4 +1,12 @@
 // write your code here!
+var width = 600;
+var height = 600;
+var barPadding = 5;
+
+var svg = d3.select('svg')
+              .attr('width', width)
+              .attr('height', height)
+
 
 d3.select('#inputForm')
   .on('submit',function(){
@@ -8,17 +16,20 @@ d3.select('#inputForm')
     var newdata = letterCount(text)
     // console.log(newdata)
 
+    var numBars = newdata.length
+    var barWidth = width / numBars - barPadding
+
     d3.select('#phrase')
         .text(`Analysis of: ${text}`)
 
 
-     var letters = d3.select("#letters")
-       .selectAll('span')
+     var letters = svg
+       .selectAll('rect')
        .data(newdata,function(d){
          return d.character
        })
 
-console.log(letters)
+
 
     letters
       .classed("new",false)
@@ -27,18 +38,20 @@ console.log(letters)
 
       letters
        .enter()
-       .append('span')
+       .append('rect')
         .classed('new', true)
       .merge(letters)
-        .style("width", '20px')
-        .style('line-height', "20px")
-        .style('margin-right', "5px")
+        .style("width", barWidth)
         .style("height", function(d){
          return d.count * 20 + 'px'
        })
-       .text(function(d){
-         return d.character
-       }).classed('letter',true)
+       .attr('x',function(d,i){
+         return (barWidth + barPadding) * i
+       })
+       .attr('y',function(d){
+         return height - d.count * 20 + 'px'
+       })
+       .classed('letter',true)
 
 
 d3.select("#count")
