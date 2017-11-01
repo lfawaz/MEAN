@@ -7,3 +7,14 @@ svg {
   stroke: #ccc;
   stroke-dasharray: 10, 5;
 }
+
+
+.tooltip{
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  background-color: lightblue;
+  border: 5px solid blue;
+  padding: 5px 5px 5px 5px;
+  border-radius: 5px;
+}

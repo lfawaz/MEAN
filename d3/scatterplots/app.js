@@ -42,6 +42,11 @@ var scatter = d3.select('svg')
                       .attr('width', width)
                       .attr('height', height)
 
+var tooltip = d3.select('body')
+                  .append('div')
+                  .classed('tooltip', true)
+
+
 scatter
   .append('g')
   .attr('transform',`translate(0,${height - padding})`)
@@ -61,6 +66,24 @@ scatter
     .attr('cy', d => yScale(d.lifeExpectancy))
     .attr('r', d => radiusScale(d.births))
     .attr('fill', d => colorScale(d.population/d.area))
+    .on('mousemove',function(d){
+      tooltip
+        .style('opacity',1)
+        .style('left', d3.event.x + 'px')
+        .style('top', d3.event.y + 'px')
+        .html(`
+          <p>Region: ${d.region}</p>
+          <p>Births: ${d.births.toLocaleString()}.</p>
+          <p>Population: ${d.population.toLocaleString()}</p>
+          <p>Area: ${d.area.toLocaleString()}</p>
+          <p>Life Expectancy: ${d.lifeExpectancy.toLocaleString()}</p>
+        `)
+
+        })
+        .on('mouseout',function(){
+          tooltip
+            .style('opacity',0)
+    })
 
 
 scatter
