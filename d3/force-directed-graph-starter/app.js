@@ -152,7 +152,7 @@ function showTooltip(d){
     .style('top',d3.event.y + "px")
     .html(`<p>Name: ${d.name}</p>
            <p>Committees</p>
-           <ol>${d.committees}</ol>`)
+           <ol>${d.committees.join(' ')}</ol>`)
 }
 
 
