@@ -1,0 +1,24 @@
+.App{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  background-color: lightgrey;
+
+}
+
+.recipe-container{
+
+  background-color: white;
+  margin: 20px;
+  padding: 10px;
+  width: 31%;
+
+}
+
+
+.recipes-container{
+
+display: flex;
+
+
+}
