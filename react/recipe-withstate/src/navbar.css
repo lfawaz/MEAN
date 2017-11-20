@@ -1,0 +1,23 @@
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  direction: row;
+  width: 100%;
+  background: darkgray;
+  color: white;
+  align-items: center;
+}
+
+.title{
+    font-size: 1.5em;
+}
+
+.menu{
+  display: flex;
+  justify-content: center;
+
+}
+p{
+    padding: 10px;
+}

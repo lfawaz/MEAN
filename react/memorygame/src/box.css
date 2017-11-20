@@ -1,0 +1,8 @@
+.box-item{
+  background-color: grey;
+  border-radius: 10px;
+  margin: 10px;
+  width: 150px;
+  height: 150px;
+  border: 2px solid grey;
+}
