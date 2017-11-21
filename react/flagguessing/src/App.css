@@ -1,0 +1,17 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+img{
+  height: 400px;
+  width: 600px;
+  border: 2px solid black;
+  margin: 10px
+}
+
+form{
+  display: flex;
+}
