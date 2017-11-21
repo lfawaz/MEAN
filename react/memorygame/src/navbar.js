@@ -13,7 +13,7 @@ class Navbar extends Component{
           <p>{this.props.title}</p>
         </div>
         <div className="navitem">
-          <p>{this.props.newGame}</p>
+          <p onClick={this.props.onClick}>{this.props.newGame}</p>
         </div>
       </div>
     )
